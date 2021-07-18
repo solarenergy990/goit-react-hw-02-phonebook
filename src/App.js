@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PhoneBook from './components/PhoneBook/PhoneBook';
+import ContactForm from './components/ContactForm/ContactForm';
 import ContactsList from './components/ContactsList/ContactsList';
 import Filter from './components/Filter/Filter';
 import initialContacts from './contacts.json';
@@ -60,14 +60,14 @@ class App extends Component {
     return (
       <div>
         <h2>Phonebook</h2>
-        <PhoneBook onSubmit={this.addContact} />
+        <ContactForm onSubmit={this.addContact} />
 
+        <h2>Contacts</h2>
+        <Filter value={filter} onChange={this.changeFilter} />
         <ContactsList
           contacts={visibleContacts}
           onContactDelete={this.deleteContact}
-        >
-          <Filter value={filter} onChange={this.changeFilter} />
-        </ContactsList>
+        />
       </div>
     );
   }

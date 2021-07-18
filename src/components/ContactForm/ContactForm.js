@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
+import s from './ContactForm.module.css';
 
-class PhoneBook extends Component {
+class ContactForm extends Component {
   state = {
     name: '',
     number: '',
@@ -33,12 +34,13 @@ class PhoneBook extends Component {
   };
 
   render() {
+    const { name, number } = this.state;
     return (
       <div>
         <form className="form" onSubmit={this.handleSubmit}>
           <div className="form-container">
-            <label htmlFor={this.nameInputId}>
-              Name
+            <label htmlFor={this.nameInputId} className={s.label}>
+              <p className={s.labelText}>Name</p>
               <input
                 type="text"
                 name="name"
@@ -47,11 +49,12 @@ class PhoneBook extends Component {
                 required
                 onChange={this.handleChange}
                 id={this.nameInputId}
-                value={this.state.name}
+                value={name}
+                className={s.input}
               />
             </label>
-            <label htmlFor={this.telInputId}>
-              Number
+            <label htmlFor={this.telInputId} className={s.label}>
+              <p className={s.labelText}>Number</p>
               <input
                 type="tel"
                 name="number"
@@ -60,10 +63,11 @@ class PhoneBook extends Component {
                 required
                 onChange={this.handleChange}
                 id={this.telInputId}
-                value={this.state.number}
+                value={number}
+                className={s.input}
               />
             </label>
-            <button type="submit" className="button">
+            <button type="submit" className={s.button}>
               Add contact
             </button>
           </div>
@@ -73,4 +77,4 @@ class PhoneBook extends Component {
   }
 }
 
-export default PhoneBook;
+export default ContactForm;
