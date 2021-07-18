@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import s from './ContactForm.module.css';
 
@@ -13,6 +14,7 @@ class ContactForm extends Component {
 
   handleChange = evt => {
     const { name, value } = evt.target;
+    console.log(name, value);
     this.setState({
       [name]: value,
     });
@@ -78,3 +80,9 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  name: PropTypes.string,
+  value: PropTypes.string,
+  number: PropTypes.string,
+};

@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './ContactListItem.module.css';
 
 const ContactListItem = ({ id, contactName, contactNumber, onClickRemove }) => {
-  //   console.log(onContactDelete);
   return (
     <li key={id} className={s.listItem}>
       <p className={s.listText}>
@@ -16,3 +16,14 @@ const ContactListItem = ({ id, contactName, contactNumber, onClickRemove }) => {
 };
 
 export default ContactListItem;
+
+ContactListItem.defaultProps = {
+  id: '',
+};
+
+ContactListItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  contactName: PropTypes.string.isRequired,
+  contactNumber: PropTypes.string.isRequired,
+  onClickRemove: PropTypes.func.isRequired,
+};
