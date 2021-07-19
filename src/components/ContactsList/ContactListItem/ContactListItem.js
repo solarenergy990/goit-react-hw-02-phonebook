@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactListItem.module.css';
 
-const ContactListItem = ({ id, contactName, contactNumber, onClickRemove }) => {
+const ContactListItem = ({ contactName, contactNumber, onClickRemove }) => {
   return (
-    <li key={id} className={s.listItem}>
+    <li className={s.listItem}>
       <p className={s.listText}>
         {contactName} : {contactNumber}
       </p>
