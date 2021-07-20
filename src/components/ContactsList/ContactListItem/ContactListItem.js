@@ -17,12 +17,7 @@ const ContactListItem = ({ contactName, contactNumber, onClickRemove }) => {
 
 export default ContactListItem;
 
-ContactListItem.defaultProps = {
-  id: '',
-};
-
 ContactListItem.propTypes = {
-  id: PropTypes.string.isRequired,
   contactName: PropTypes.string.isRequired,
   contactNumber: PropTypes.string.isRequired,
   onClickRemove: PropTypes.func.isRequired,
